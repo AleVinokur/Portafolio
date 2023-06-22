@@ -78,4 +78,16 @@ body, html {
   transform: scale(1.2);
 }
 
+.typed-cursor {
+  opacity: 1;
+  animation: typedjsBlink 0.7s infinite;
+}
+
+@keyframes typedjsBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
 
