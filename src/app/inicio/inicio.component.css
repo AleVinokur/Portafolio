@@ -1,29 +1,3 @@
-body, html {
-  height: 100%;
-  margin: 0;
-}
-
-.hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-div {
-  text-align: center;
-}
-
-.perfil {
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-}
-
-
-
 /* Adaptable (Responsivo) */
 
 @media screen and (max-width: 400px) {
@@ -58,3 +32,50 @@ body, html {
     max-width: 600px;
   }
 }
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 99;
+  background-color: gray;
+}
+
+.hero-div {
+  text-align: center;
+}
+
+.perfil {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
+
+#particles-js{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.contacto img {
+  margin-right: 1rem;
+  width: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.contacto img:hover {
+  transform: scale(1.2);
+}
+
+
