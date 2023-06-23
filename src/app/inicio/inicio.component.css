@@ -33,11 +33,15 @@
   }
 }
 
+.btn-color {
+  color: rgb(255, 255, 255);
+}
+.nombre {
+  color:rgb(255, 255, 255);
+}
 
-body, html {
-  height: 100%;
-  margin: 0;
-
+.navbar {
+background-color: rgba(54, 19, 123, 0.687);
 }
 
 .hero {
@@ -47,8 +51,7 @@ body, html {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 99;
-  background-color: gray;
+  background-color: rgb(53, 50, 71);
 }
 
 .hero-div {
@@ -61,12 +64,6 @@ body, html {
   margin: 20px;
 }
 
-#particles-js{
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  z-index: -1;
-}
 
 .contacto img {
   margin-right: 1rem;

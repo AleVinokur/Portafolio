@@ -4,11 +4,13 @@ import { CargarScriptsService } from './cargar-scripts.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { ConocimientosComponent } from './conocimientos/conocimientos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
+    InicioComponent,
+    ConocimientosComponent
   ],
   imports: [
     BrowserModule,
