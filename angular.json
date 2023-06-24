@@ -30,8 +30,7 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js",
-              "node_modules/typed.js/dist/typed.umd.js",
-              "src/assets/scripts/particles.js"
+              "node_modules/typed.js/dist/typed.umd.js"
 
             ]
           },
@@ -98,8 +97,7 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js",
-              "node_modules/typed.js/dist/typed.umd.js",
-              "./"
+              "node_modules/typed.js/dist/typed.umd.js"
 
             ]
           }
