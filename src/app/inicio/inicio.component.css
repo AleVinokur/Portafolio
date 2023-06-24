@@ -65,7 +65,7 @@
 
 
 .navbar {
-background-color: rgba(54, 19, 123, 0.687);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(145,77,247,1) 35%, rgba(0,67,153,1) 71%, rgba(0,0,94,1) 100%);
 }
 .fixed-navbar {
   position: fixed;
@@ -77,7 +77,7 @@ background-color: rgba(54, 19, 123, 0.687);
 .hero {
   overflow: hidden;
   position: relative;
-  height: 70vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,7 +148,7 @@ p {
 .header {
   position:relative;
   text-align:center;
-  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(145,77,247,1) 35%, rgba(0,67,153,1) 71%, rgba(0,0,94,1) 100%);
   color:white;
 }
 .logo {
@@ -177,7 +177,6 @@ p {
   position:relative;
   width: 100%;
   height:15vh;
-  margin-bottom:; /*Fix for safari gap*/
   min-height:200px;
   max-height:150px;
 }
@@ -230,4 +229,45 @@ p {
   h1 {
     font-size:24px;
   }
+}
+
+.titulo-conocimiento {
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-size:xx-large;
+  padding-bottom: 5rem;
+}
+.conocimientos {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.conocimientos .conocimiento {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 33.33%;
+  margin-bottom: 5rem;
+  justify-content: center;
+}
+
+.conocimiento img {
+  width: 8rem;
+  transition: transform 0.3s ease;
+}
+
+.conocimiento img:hover {
+  transform: scale(1.2);
+}
+.conocimientos .conocimiento h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.conocimientos .conocimiento .ciberseguridad {
+  margin-left: 7.5rem
 }
