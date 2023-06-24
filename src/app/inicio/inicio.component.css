@@ -33,18 +33,43 @@
   }
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
 .btn-color {
   color: rgb(255, 255, 255);
 }
 .nombre {
   color:rgb(255, 255, 255);
+  font-family:'Roboto', sans-serif;
+  font-weight: bold;
+
 }
+
+
+.nombre h2 {
+  font-size: larger;
+}
+
 
 .navbar {
 background-color: rgba(54, 19, 123, 0.687);
 }
 
 .hero {
+  overflow: hidden;
   position: relative;
   height: 100vh;
   display: flex;
@@ -53,6 +78,7 @@ background-color: rgba(54, 19, 123, 0.687);
   overflow: hidden;
   background-color: rgb(53, 50, 71);
 }
+
 
 .hero-div {
   text-align: center;
@@ -65,9 +91,10 @@ background-color: rgba(54, 19, 123, 0.687);
 }
 
 
+
 .contacto img {
-  margin-right: 1rem;
-  width: 3rem;
+  margin: 2rem;
+  width: 5rem;
   transition: transform 0.3s ease;
 }
 
