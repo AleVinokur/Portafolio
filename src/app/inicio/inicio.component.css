@@ -1,37 +1,4 @@
-/* Adaptable (Responsivo) */
 
-@media screen and (max-width: 400px) {
-  .overlay p {
-    font-size: 18px;
-  }
-
-  .overlay i {
-    font-size: 40px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .navbar-brand {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .testimonio-imagen {
-    height: 120px;
-    width: 120px;
-  }
-
-  .testimonio-texto {
-    font-size: 18px;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .hero-inferior-imagen {
-    max-width: 600px;
-  }
-}
 
 @font-face {
   font-family: 'Roboto';
@@ -47,26 +14,32 @@
   font-style: normal;
 }
 
-
 .btn-color {
   color: rgb(255, 255, 255);
 }
+
 .nombre {
-  color:rgb(255, 255, 255);
-  font-family:'Roboto', sans-serif;
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
-
 }
-
 
 .nombre h2 {
   font-size: larger;
 }
 
-
 .navbar {
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(145,77,247,1) 35%, rgba(0,67,153,1) 71%, rgba(0,0,94,1) 100%);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(145, 77, 247, 1) 35%, rgba(0, 67, 153, 1) 71%, rgba(0, 0, 94, 1) 100%);
 }
+
+.navbar a {
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+  transform: scale(1.2);
+}
+
 .fixed-navbar {
   position: fixed;
   top: 0;
@@ -82,9 +55,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
 }
-
 
 .hero-div {
   text-align: center;
@@ -96,14 +67,11 @@
   margin: 20px;
 }
 
-
-
 .contacto img {
   margin: 2rem;
   width: 5rem;
   transition: transform 0.3s ease;
 }
-
 
 .contacto img:hover {
   transform: scale(1.2);
@@ -125,109 +93,111 @@
   justify-content: center;
 }
 
-
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
 body {
-  margin:0;
+  margin: 0;
 }
 
 h1 {
   font-family: 'Lato', sans-serif;
-  font-weight:300;
+  font-weight: 300;
   letter-spacing: 2px;
-  font-size:48px;
+  font-size: 48px;
 }
+
 p {
   font-family: 'Lato', sans-serif;
   letter-spacing: 1px;
-  font-size:14px;
+  font-size: 14px;
   color: #333333;
 }
 
 .header {
-  position:relative;
-  text-align:center;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(145,77,247,1) 35%, rgba(0,67,153,1) 71%, rgba(0,0,94,1) 100%);
-  color:white;
+  position: relative;
+  text-align: center;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(145, 77, 247, 1) 35%, rgba(0, 67, 153, 1) 71%, rgba(0, 0, 94, 1) 100%);
+  color: white;
 }
+
 .logo {
-  width:50px;
-  fill:white;
-  padding-right:15px;
-  display:inline-block;
+  width: 50px;
+  fill: white;
+  padding-right: 15px;
+  display: inline-block;
   vertical-align: middle;
 }
 
 .inner-header {
-  height:65vh;
-  width:100%;
+  height: 65vh;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.flex { /*Flexbox for containers*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
 
 .waves {
-  position:relative;
+  position: relative;
   width: 100%;
-  height:15vh;
-  min-height:200px;
-  max-height:150px;
+  height: 15vh;
+  min-height: 200px;
+  max-height: 150px;
 }
 
 .content {
-  position:relative;
-  height:20vh;
-  text-align:center;
+  position: relative;
+  height: 20vh;
+  text-align: center;
   background-color: white;
 }
 
 /* Animation */
 
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
+
 .parallax > use:nth-child(1) {
   animation-delay: -2s;
   animation-duration: 7s;
 }
+
 .parallax > use:nth-child(2) {
   animation-delay: -3s;
   animation-duration: 10s;
 }
+
 .parallax > use:nth-child(3) {
   animation-delay: -4s;
   animation-duration: 13s;
 }
+
 .parallax > use:nth-child(4) {
   animation-delay: -5s;
   animation-duration: 20s;
 }
+
 @keyframes move-forever {
   0% {
-   transform: translate3d(-90px,0,0);
+    transform: translate3d(-90px, 0, 0);
   }
   100% {
-    transform: translate3d(85px,0,0);
+    transform: translate3d(85px, 0, 0);
   }
 }
+
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
-    height:40px;
-    min-height:40px;
+    height: 40px;
+    min-height: 40px;
   }
   .content {
-    height:30vh;
+    height: 30vh;
   }
   h1 {
-    font-size:24px;
+    font-size: 24px;
   }
 }
 
@@ -235,12 +205,13 @@ p {
   font-family: 'Roboto';
   src: url('../../assets/fonts/Roboto-Regular.ttf') format('truetype');
   font-weight: bold;
-  font-size:xx-large;
-  padding-bottom: 5rem;
+  font-size: xx-large;
+
 }
+
 .conocimientos {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
@@ -248,26 +219,27 @@ p {
 
 .conocimientos .conocimiento {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 33.33%;
+  width: 100%;
+  max-width: 400px;
   margin-bottom: 5rem;
-  justify-content: center;
+  text-align: center;
 }
 
-.conocimiento img {
+.conocimientos .conocimiento img {
   width: 8rem;
   transition: transform 0.3s ease;
 }
 
-.conocimiento img:hover {
+.conocimientos .conocimiento:hover img {
   transform: scale(1.2);
 }
+
 .conocimientos .conocimiento h3 {
   font-size: 2rem;
   text-align: center;
 }
 
-.conocimientos .conocimiento .ciberseguridad {
-  margin-left: 7.5rem
-}
+
