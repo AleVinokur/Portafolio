@@ -4,12 +4,13 @@ import { CargarScriptsService } from './cargar-scripts.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
-
+import { SmoothScrollDirective } from './inicio/smooth-scroll.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
+    InicioComponent,
+    SmoothScrollDirective
   ],
   imports: [
     BrowserModule,
