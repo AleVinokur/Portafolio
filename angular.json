@@ -98,7 +98,6 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js",
               "node_modules/typed.js/dist/typed.umd.js"
-
             ]
           }
         }
