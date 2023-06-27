@@ -101,6 +101,9 @@
               "./src/assets/scripts/togglemenu.js"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

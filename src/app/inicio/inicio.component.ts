@@ -3,7 +3,7 @@ import Typed from 'typed.js';
 
 @Component({
   selector: 'app-inicio',
-  templateUrl: '../app.component.html',
+  templateUrl: '../inicio/inicio.component.html',
   styleUrls: ['./inicio.component.css', '../app.component.css']
 })
 export class InicioComponent implements OnInit {
