@@ -51,11 +51,13 @@ summary::before {
 
 }
 summary::after {
-  content: "III";
-  letter-spacing: 1px;
-  font-weight: normal;
-  font-size: 2rem;
-  margin: 1rem;
+    content: " ";
+    display: inline-block;
+    width: 3rem; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: 3rem;
+    background-image: url(../../assets/img/icons8-menú-xbox-64.ico); /* Ruta de la imagen */
+    background-size: cover;
+    margin: 1rem
 }
 summary:hover {
   transform: scale(1.1);
@@ -70,31 +72,36 @@ details[open] .menu {
   animation-name: menuAnim;
 }
 details[open] summary::before {
-  content: "X";
-  letter-spacing: 1px;
-  font-weight: normal;
-  font-size: 2rem;
-  margin: 1rem;
+  content: " ";
+  display: inline-block;
+  width: 4rem; /* Ajusta el ancho de la imagen según tus necesidades */
+  height: 4rem; /* Ajusta la altura de la imagen según tus necesidades */
+  background-image: url(../../assets/img/icons8-cerrar-ventana-100.ico); /* Ruta de la imagen */
+  background-size: cover;
+  margin: .5rem;
+  z-index: 1000;
+
 }
+
 details[open] summary::after {
-  content: "";
+  content: " ";
 }
 .menu {
   width:fit-content;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px 0 rgba(223, 215, 215, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
   animation: closeMenu 300ms ease-in-out forwards;
   position: absolute;
-  margin: 2rem;
+  margin: 3rem;
 }
 .menu a {
   padding: 12px 24px;
-  margin: 0 16px;
+  margin: 2rem;
   color: var(--secoColor);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(152, 142, 142, 0.1);
   text-decoration: none;
   text-align: center;
   transition: filter 200ms linear 0s;
@@ -302,16 +309,191 @@ p {
 }
 
 /*Shrinking for mobile*/
-@media (max-width: 768px) {
+@media (min-width: 280px) {
   .waves {
-    height: 40px;
-    min-height: 40px;
+    height: 80px;
+    min-height: 80px;
   }
   .content {
-    height: 30vh;
+    height: 60vh;
   }
   h1 {
     font-size: 24px;
   }
+  .olas {
+    position: relative;
+    margin-top: 3.3rem;
+   }
+
+   .contacto img {
+    margin: 1rem;
+    width: 3rem;
+    transition: transform 0.3s ease;
+   }
+   .perfil {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+  }
 }
 
+@media (min-width: 360px) {
+  .waves {
+    height: 100px;
+    min-height: 100px;
+  }
+  .content {
+    height: 60vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas {
+    position: relative;
+    margin-top: 2rem;
+   }
+   .contacto img {
+    margin: 1.5rem;
+    width: 3rem;
+    transition: transform 0.3s ease;
+   }
+   .perfil {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+  }
+}
+
+
+@media (min-width: 375px) {
+  .waves {
+    height: 100px;
+    min-height: 100px;
+  }
+  .content {
+    height: 60vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas {
+    position: relative;
+    margin-top: 4rem;
+   }
+   .contacto img {
+    margin: 1.5rem;
+    width: 4rem;
+    transition: transform 0.3s ease;
+   }
+   .perfil {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .waves {
+    height: 200px;
+    min-height: 200px;
+  }
+  .content {
+    height: 60vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas {
+    position: relative;
+    margin-top: 1rem;
+   }
+   .contacto img {
+    margin: 2rem;
+    width: 5rem;
+    transition: transform 0.3s ease;
+   }
+   .perfil {
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .waves {
+    height: 250px;
+    min-height: 250px;
+  }
+  .content {
+    height: 100vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas {
+    position: relative;
+    margin-top: 1.5rem;
+   }
+   .perfil {
+    width: 350px;
+    height: 350px;
+    margin: 2rem;
+  }
+   .nombre h1 {
+    font-size: 3rem;
+  }
+  .nombre h2 {
+    font-size: 2rem;
+  }
+}
+
+
+@media (min-width: 1280px) {
+  .waves {
+    height: 250px;
+    min-height: 250px;
+  }
+  .content {
+    height: 100vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas {
+    position: relative;
+    margin-top: -3.5rem;
+   }
+}
+
+@media (min-width: 3840px) {
+  .waves {
+    height: 600px;
+    min-height: 600px;
+  }
+  .content {
+    height: 100vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas {
+    position: relative;
+    margin-top: -10rem;
+   }
+   .contacto img {
+    margin: 10rem;
+    width: 15rem;
+    transition: transform 0.3s ease;
+   }
+   .perfil {
+    width: 600px;
+    height: 600px;
+    margin: 100px;
+  }
+  .nombre h1 {
+    font-size: 8rem;
+  }
+  .nombre h2 {
+    font-size: 5rem;
+  }
+}

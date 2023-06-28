@@ -69,19 +69,172 @@
    }
  }
 
- /*Shrinking for mobile*/
- @media (max-width: 768px) {
-   .waves {
-     height: 40px;
-     min-height: 40px;
+
+/*Shrinking for mobile*/
+@media (min-width: 280px) {
+  .waves-conocimientos {
+    height: 80px;
+    min-height: 80px;
+  }
+  .content {
+    height: 60vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas-conocimientos {
+    position: relative;
+    margin-top: -5rem;
    }
-   .content {
-     height: 30vh;
+   .contacto img {
+    margin: 2rem;
+    width: 5rem;
+    transition: transform 0.3s ease;
    }
-   h1 {
-     font-size: 24px;
+   .conocimientos .conocimiento img{
+    width: 1rem;
+  }
+
+}
+
+@media (min-width: 360px) {
+  .waves-conocimientos {
+    height: 100px;
+    min-height: 100px;
+  }
+  .content {
+    height: 60vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas {
+    position: relative;
+    margin-top: 2rem;
    }
- }
+   .conocimientos .conocimiento img{
+    width: 1rem;
+  }
+}
+
+@media (min-width: 375px) {
+  .waves-conocimientos {
+    height: 100px;
+    min-height: 100px;
+  }
+  .content {
+    height: 60vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas-conocimientos{
+    position: relative;
+    margin-top: -7rem;
+   }
+
+}
+@media (min-width: 768px) {
+  .waves-conocimientos {
+    height: 150px;
+    min-height: 150px;
+  }
+  .content {
+    height: 60vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas-conocimientos {
+    position: relative;
+    margin-top: -5rem;
+   }
+}
+
+@media (min-width: 1024px) {
+  .waves-conocimientos {
+    height: 250px;
+    min-height: 250px;
+  }
+  .content {
+    height: 100vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas-conocimientos {
+    position: relative;
+    margin-top: -2rem;
+   }
+
+  .titulo-conocimiento {
+    position: relative;
+    font-family: 'Roboto';
+    src: url('../../assets/fonts/Roboto-Regular.ttf') format('truetype');
+    margin-bottom: 2rem;
+  }
+  .titulo-conocimiento h1 {
+   font-size: 3rem;
+   margin-left: 2rem;
+  }
+  .titulo-conocimiento p {
+    font-size: 2rem;
+    font-weight: lighter;
+   }
+}
+
+
+@media (min-width: 1280px) {
+  .waves-conocimientos {
+    height: 200px;
+    min-height: 200px;
+  }
+  .content {
+    height: 100vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas-conocimientos {
+    position: relative;
+    margin-top: -2.9rem;
+   }
+
+   .titulo-conocimiento {
+    position: relative;
+    font-family: 'Roboto';
+    src: url('../../assets/fonts/Roboto-Regular.ttf') format('truetype');
+    margin-bottom: 3rem;
+  }
+  .titulo-conocimiento h1 {
+   font-size: 3rem;
+   margin-left: 2rem;
+  }
+  .titulo-conocimiento p {
+    font-size: 2rem;
+    font-weight: lighter;
+   }
+
+
+}
+
+@media (min-width: 3840px) {
+  .waves-conocimientos {
+    height: 400px;
+    min-height: 400px;
+  }
+  .content {
+    height: 100vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .olas-conocimientos {
+    position: relative;
+    margin-top: 5rem;
+   }
+}
+
 
  .titulo-conocimiento {
   font-family: 'Roboto';
