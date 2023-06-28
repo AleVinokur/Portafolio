@@ -60,7 +60,7 @@ summary::after {
     margin: 1rem
 }
 summary:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 summary::marker {
   font-size: 0;
@@ -87,24 +87,26 @@ details[open] summary::after {
   content: " ";
 }
 .menu {
+  background-color: rgba(232, 232, 232, 0.365);;
   width:fit-content;
   box-shadow: 0 4px 12px 0 rgba(223, 215, 215, 0.2);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:space-around;
   overflow: hidden;
-  animation: closeMenu 300ms ease-in-out forwards;
+  animation: closeMenu 1s ease-in-out forwards;
   position: absolute;
   margin: 3rem;
 }
 .menu a {
-  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight:normal;
   margin: 2rem;
-  color: var(--secoColor);
-  border-bottom: 2px solid rgba(152, 142, 142, 0.1);
-  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid rgba(152, 142, 142, 0.5);
+  text-decoration:solid;
   text-align: center;
-  transition: filter 200ms linear 0s;
+  transition: filter 200ms linear 1s;
 }
 .menu a:nth-of-type(1) {
   padding-top: 24px;
@@ -112,10 +114,7 @@ details[open] summary::after {
 .menu a:nth-last-of-type(1) {
   border-bottom: none;
 }
-.menu a:hover {
-  filter: brightness(200%);
-  transform: scale(1.5);
-}
+
 details::before {
   color: var(--secoColor);
   position: fixed;
