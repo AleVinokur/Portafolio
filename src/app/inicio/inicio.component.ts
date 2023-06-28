@@ -4,7 +4,7 @@ import Typed from 'typed.js';
 @Component({
   selector: 'app-inicio',
   templateUrl: '../inicio/inicio.component.html',
-  styleUrls: ['./inicio.component.css', '../app.component.css']
+  styleUrls: ['./inicio.component.css', './media.inicio.css','../app.component.css']
 })
 export class InicioComponent implements OnInit {
   ngOnInit() {
