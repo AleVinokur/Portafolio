@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-clima',
   templateUrl: './clima.component.html',
@@ -12,15 +11,18 @@ export class ClimaComponent {
   descripcion: string = '';
   dia: string = '';
   hora: string = '';
-  ciudad: string = '';
+  ubicacion: string = '';
+  imagenClima: string = '';
 
   constructor(private http: HttpClient) {
     this.obtenerCoordenadasActuales();
+    this.dia = this.obtenerFechaActual();
+    this.hora = this.obtenerHoraActual();
   }
 
-  obtenerCoordenadas(ciudad: string) {
+  obtenerCoordenadas(ubicacion: string) {
     const apiKey = '3ec9901109468390854cde8c05855aa8';
-    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${ciudad}&limit=1&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${ubicacion}&limit=1&appid=${apiKey}`;
 
     this.http.get<any[]>(url).subscribe((data) => {
       if (data.length > 0) {
@@ -42,6 +44,7 @@ export class ClimaComponent {
     this.http.get<any>(url).subscribe((data) => {
       this.temperatura = +(data.main.temp - 273.15).toFixed(2);
       this.descripcion = data.weather[0].description;
+      this.imagenClima = this.obtenerRutaImagen(this.descripcion);
     }, (error) => {
       console.error(error);
     });
@@ -74,4 +77,20 @@ export class ClimaComponent {
     return fecha.toLocaleTimeString('es-ES', options);
   }
 
+  obtenerRutaImagen(descripcion: string): string {
+    const clima = descripcion.toLowerCase();
+    let rutaImagen = '';
+
+    if (clima.includes('soleado')) {
+      rutaImagen = 'assets/wheater-img/sun.ico';
+    } else if (clima.includes('nublado')) {
+      rutaImagen = 'assets/wheater-img/cloudy-_1_.ico';
+    } else if (clima.includes('nevando')) {
+      rutaImagen = 'assets/wheater-img/snow.ico';
+    } else {
+      rutaImagen = 'assets/wheater-img/storm.ico';
+    }
+
+    return rutaImagen;
+  }
 }

@@ -1,4 +1,15 @@
-<div class="clima-recuadro">
-  <h2>Clima Actual</h2>
-  
+<div class="clima-proyecto">
+   <h2>Clima Actual</h2>
+  <div class="clima-recuadro">
+    <div class="wheater-head">
+      <div class="location">{{ubicacion}}</div>
+      <div class="time">{{ "Hora: " + hora }}</div>
+    </div>
+    <div class="weather">
+      <img [src]="imagenClima" alt="Imagen Clima"><br>
+      {{ "Temperatura: " + temperatura + " " + "°C" }} <br>
+      <div class="descripcion">{{descripcion}}</div>
+    </div>
+  </div>
+
 </div>
