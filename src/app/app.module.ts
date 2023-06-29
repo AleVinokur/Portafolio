@@ -7,6 +7,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { SmoothScrollDirective } from './inicio/smooth-scroll.directive';
 import { ConocimientosComponent } from './conocimientos/conocimientos.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
+import { ClimaComponent } from './clima/clima.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
     InicioComponent,
     SmoothScrollDirective,
     ConocimientosComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    ClimaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent]
