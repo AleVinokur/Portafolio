@@ -1,0 +1,192 @@
+
+@media (min-width: 280px) {
+    .waves {
+      height: 80px;
+      min-height: 80px;
+    }
+    .content {
+      height: 60vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .olas {
+      position: relative;
+      margin-top: 3.3rem;
+     }
+  
+     .contacto img {
+      margin: 1rem;
+      width: 3rem;
+      transition: transform 0.3s ease;
+     }
+     
+  }
+  
+  @media (min-width: 360px) {
+    .waves {
+      height: 100px;
+      min-height: 100px;
+    }
+    .content {
+      height: 60vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .olas {
+      position: relative;
+      margin-top: 2rem;
+     }
+     .contacto img {
+      margin: 1.5rem;
+      width: 3rem;
+      transition: transform 0.3s ease;
+     }
+     
+  }
+  
+  
+  @media (min-width: 375px) {
+    .waves {
+      height: 100px;
+      min-height: 100px;
+    }
+    .content {
+      height: 60vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .olas {
+      position: relative;
+      margin-top: 4rem;
+     }
+     .contacto img {
+      margin: 1.5rem;
+      width: 4rem;
+      transition: transform 0.3s ease;
+     }
+    
+  }
+  
+  @media (min-width: 768px) {
+    .waves {
+      height: 200px;
+      min-height: 200px;
+    }
+    .content {
+      height: 60vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .olas {
+      position: relative;
+      margin-top: 1rem;
+     }
+     .contacto img {
+      margin: 2rem;
+      width: 5rem;
+      transition: transform 0.3s ease;
+     }
+     
+  }
+  
+  @media (min-width: 1024px) {
+    .waves {
+      height: 250px;
+      min-height: 250px;
+    }
+    .content {
+      height: 100vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .olas {
+      position: relative;
+      margin-top: 1.5rem;
+     }
+     .clima-recuadro {
+        width: 30rem;
+        height: 25rem;
+        margin-top: 10rem;
+        margin-left: 10rem;
+      }
+     
+  }
+  
+  
+  @media (min-width: 1280px) {
+    .waves {
+      height: 250px;
+      min-height: 250px;
+    }
+    .content {
+      height: 100vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .olas {
+      position: relative;
+      margin-top: -3.5rem;
+     }
+     .clima-recuadro {
+        width: 30rem;
+        height: 25rem;
+        margin-top: 10rem;
+        margin-left: 10rem;
+      }
+     
+  }
+
+  @media (min-width: 1366px) {
+    .waves {
+      height: 250px;
+      min-height: 250px;
+    }
+    .content {
+      height: 100vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .olas {
+      position: relative;
+      margin-top: -3.5rem;
+     }
+     .clima-recuadro {
+        width: 30rem;
+        height: 25rem;
+        margin-top: 10rem;
+        margin-left: 10rem;
+      }
+     
+  }
+  
+  @media (min-width: 3840px) {
+    .waves {
+      height: 600px;
+      min-height: 600px;
+    }
+    .content {
+      height: 100vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .olas {
+      position: relative;
+      margin-top: -10rem;
+     }
+     .clima-recuadro {
+        width: 30rem;
+        height: 25rem;
+        margin-top: 10rem;
+        margin-left: 10rem;
+      }
+     
+  }
+  

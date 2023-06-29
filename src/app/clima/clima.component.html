@@ -1,16 +1,35 @@
-<div class="clima-proyecto">
-   <h2>Clima Actual</h2>
-  <div class="clima-recuadro">
-    <div><button (click)="actualizarDatos()">Actualizar</button></div>
-    <div class="wheater-head">
-      <div class="location">{{ubicacion}}</div>
-      <div class="time">{{ "Hora: " + hora }}</div>
-    </div>
-    <div class="weather">
-      <img [src]="imagenClima" alt="Imagen Clima"><br>
-      {{ "Temperatura: " + temperatura + " " + "°C" }} <br>
-      <div class="descripcion">{{descripcion}}</div>
+<body>
+  <div class="clima-proyecto">
+    <h2>Clima Actual</h2>
+    <div class="clima-recuadro">
+      <div class="wheater-head">
+        <div class="time">{{ "Hora: " + hora }}
+        <div class="actualizar-wheater">
+          <button class="actualizar-button" (click)="actualizarDatos()"></button>
+        </div>
+      </div>
+        <div class="location">{{ubicacion}}</div>
+      </div>
+
+      <div class="clima-logo">
+        <img [src]="imagenClima" alt="Imagen Clima">
+      </div>
+      
+      <div class="weather">
+        <div class="tiempo">
+          <div class="temperatura">{{ "Temperatura: " + temperatura + " " + "°C" }}</div>
+          <div class="descripcion">{{descripcion}}</div>
+        </div>
+        <div class="wind">
+          <div class="velocidad-viento">
+            <p>Velocidad del viento: {{ windSpeedValue }} {{ windSpeedUnit }}</p>
+          </div>
+          <div class="direccion-viento">
+            <p>Dirección del viento: {{ windDirection }}°</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-
-</div>
+</body>

@@ -1,3 +1,6 @@
+body {
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(145, 77, 247, 1) 35%, rgba(0, 67, 153, 1) 71%, rgba(0, 0, 94, 1) 100%);
+}
 
 .clima-recuadro {
   position: relative;
@@ -5,39 +8,87 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   backdrop-filter: blur(5px);
-  margin: 5rem;
-  width: 30rem;
-  height: 25rem;
-  margin-top: 10rem;
-  margin-left: 55rem;
+  max-width: 30rem;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.wheater-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .location {
   color: azure;
-  position: absolute;
-  top: 10px;
-  left: 10px;
 }
 
 .time {
+  column-gap: .5rem;
+  display: flex;
   color: azure;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  align-items: center;
 }
-.weather-head {
-  padding-bottom: 5rem;
+ .actualizar-button{
+  margin-top: 1rem;
+}
+
+
+.weather {
+  margin-top: 2rem;
+  color: azure;
+  text-align: center;
+}
+
+.actualizar-wheater {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.actualizar-button {
+  background-image: url('../../assets/img/actualizado.ico');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.descripcion {
+  margin-top: 1.5rem;
+}
+.clima-logo {
+  display: flex;
+  justify-content: center;
 }
 .weather {
   margin-top: 2rem;
   color: azure;
-  display: block;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
-.descripcion {
-  margin-left: 1.5rem;
+
+.tiempo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.wind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
