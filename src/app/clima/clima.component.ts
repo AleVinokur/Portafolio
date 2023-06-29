@@ -13,6 +13,10 @@ export class ClimaComponent {
   hora: string = '';
   ubicacion: string = '';
   imagenClima: string = '';
+  windSpeedValue: number = 0;
+  windSpeedUnit: string = '';
+  windDirection: string = '';
+
 
   constructor(private http: HttpClient) {
     this.obtenerCoordenadasActuales();
@@ -47,6 +51,9 @@ export class ClimaComponent {
       this.descripcion = data.weather[0].description;
       this.ubicacion = data.name + ', ' + data.sys.country;
       this.imagenClima = this.obtenerRutaImagen(this.descripcion);
+      this.windSpeedValue = data.wind.speed.value;
+      this.windSpeedUnit = data.wind.speed.unit;
+      this.windDirection = data.wind.direction.value;
     }, (error) => {
       console.error(error);
     });
