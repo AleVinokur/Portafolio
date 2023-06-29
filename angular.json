@@ -91,6 +91,11 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/weather-icons/font",
+                "output": "/weather-icons/font"
+              },
               "src/assets/img"
             ],
             "styles": [
@@ -99,8 +104,7 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js",
-              "node_modules/typed.js/dist/typed.umd.js",
-              "./src/assets/scripts/togglemenu.js"
+              "node_modules/typed.js/dist/typed.umd.js"
             ]
           }
         },

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-clima',
   templateUrl: './clima.component.html',
@@ -9,9 +10,12 @@ import { HttpClient } from '@angular/common/http';
 export class ClimaComponent {
   temperatura: number = 0;
   descripcion: string = '';
-  icono: string = '';
+  dia: string = '';
+  hora: string = '';
+  ciudad: string = '';
+
   constructor(private http: HttpClient) {
-    this.obtenerCoordenadas('Ciudad Ejemplo');
+    this.obtenerCoordenadasActuales();
   }
 
   obtenerCoordenadas(ciudad: string) {
@@ -31,14 +35,43 @@ export class ClimaComponent {
   }
 
   obtenerClimaActual(lat: number, lon: number) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=TU_API_KEY`;
+    const apiKey = '3ec9901109468390854cde8c05855aa8';
+    const lang = 'es'; // Desired language code (e.g., 'es' for Spanish)
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&lang=${lang}`;
 
     this.http.get<any>(url).subscribe((data) => {
-      this.temperatura = data.main.temp;
+      this.temperatura = +(data.main.temp - 273.15).toFixed(2);
       this.descripcion = data.weather[0].description;
-      this.icono = data.weather[0].icon;
     }, (error) => {
       console.error(error);
     });
   }
+
+  obtenerCoordenadasActuales() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        this.obtenerClimaActual(lat, lon);
+      }, (error) => {
+        console.error(error);
+      });
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }
+
+  obtenerFechaActual(): string {
+    const fecha = new Date();
+    const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return fecha.toLocaleDateString('es-ES', options);
+  }
+
+  obtenerHoraActual(): string {
+    const fecha = new Date();
+    const options: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', hour12: true };
+    return fecha.toLocaleTimeString('es-ES', options);
+  }
+
 }

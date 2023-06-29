@@ -1,3 +1,34 @@
-p {
-  color: aliceblue;
+.clima-recuadro {
+  background-color: rgba(242, 242, 242, 0.261);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+  margin: 5rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+.clima-recuadro h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.fecha-hora {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.temperatura {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.ciudad {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.descripcion {
+  font-size: 16px;
+  margin-bottom: 0;
 }
