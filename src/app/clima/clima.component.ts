@@ -30,6 +30,7 @@ export class ClimaComponent {
         const lon = data[0].lon;
 
         this.obtenerClimaActual(lat, lon);
+        this.ubicacion = ubicacion;
       }
     }, (error) => {
       console.error(error);
@@ -44,6 +45,7 @@ export class ClimaComponent {
     this.http.get<any>(url).subscribe((data) => {
       this.temperatura = +(data.main.temp - 273.15).toFixed(2);
       this.descripcion = data.weather[0].description;
+      this.ubicacion = data.name + ', ' + data.sys.country;
       this.imagenClima = this.obtenerRutaImagen(this.descripcion);
     }, (error) => {
       console.error(error);
@@ -92,5 +94,11 @@ export class ClimaComponent {
     }
 
     return rutaImagen;
+  }
+
+  actualizarDatos() {
+    this.obtenerCoordenadasActuales();
+    this.dia = this.obtenerFechaActual();
+    this.hora = this.obtenerHoraActual();
   }
 }
