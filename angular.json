@@ -23,7 +23,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/img"
+              "src/assets/img",
+              "src/assets/wheater-img"
             ],
             "styles": [
               "src/styles.css",
@@ -96,7 +97,8 @@
                 "input": "node_modules/weather-icons/font",
                 "output": "/weather-icons/font"
               },
-              "src/assets/img"
+              "src/assets/img",
+              "src/assets/wheater-img"
             ],
             "styles": [
               "src/styles.css",
