@@ -17,14 +17,30 @@ body {
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(145, 77, 247, 1) 35%, rgba(0, 67, 153, 1) 71%, rgba(0, 0, 94, 1) 100%);
 }
 
+.buscador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -55rem;
+}
+.buscador input {
+  max-width: 7%;
+}
+
+.buscador img{
+  width: 3rem;
+}
+
 .clima-recuadro {
+  font-family: 'Roboto';
+  font-size: normal;
   position: relative;
   background-color: rgba(242, 242, 242, 0.261);
   border: 1px solid #ccc;
   border-radius: 5px;
   backdrop-filter: blur(5px);
-  max-width: 30rem;
-  width: 90%;
+  width: 30rem;
+  height: 20rem;
   margin-left: 10rem;
   padding: 2rem;
 }
@@ -40,7 +56,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-top: -1rem;
 }
 
 .location {
@@ -82,10 +98,11 @@ body {
   justify-content: center;
 }
 .clima-logo img{
-  width: 5rem;
+  margin-top: 2rem;
+  width: 6rem;
 }
 .weather {
-  margin-top: 2rem;
+  margin-top: 3rem;
   color: azure;
   display: flex;
   flex-direction: row;

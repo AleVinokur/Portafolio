@@ -9,6 +9,7 @@ import { ConocimientosComponent } from './conocimientos/conocimientos.component'
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { ClimaComponent } from './clima/clima.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent]

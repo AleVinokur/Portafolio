@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IconImages, iconImages } from './icon-images';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-clima',
@@ -18,36 +19,43 @@ export class ClimaComponent {
   windSpeedUnit: string = '';
   windDirection: string = '';
   iconImages: IconImages = iconImages;
+  busqueda: string = '';
 
   constructor(private http: HttpClient) {
     this.obtenerCoordenadasActuales();
     this.dia = this.obtenerFechaActual();
-    this.hora = this.obtenerHoraActual();
+    this.obtenerHoraLocal();
   }
 
   obtenerCoordenadas(ubicacion: string) {
-    const apiKey = '3ec9901109468390854cde8c05855aa8';
-    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${ubicacion}&limit=1&appid=${apiKey}`;
+    if (ubicacion.toLowerCase() === 'mi ubicacion') {
+      this.obtenerCoordenadasActuales();
+    } else {
+      const apiKey = '3ec9901109468390854cde8c05855aa8';
+      const url = `https://api.openweathermap.org/geo/1.0/direct?q=${ubicacion}&limit=1&appid=${apiKey}`;
 
-    this.http.get<any[]>(url).subscribe(
-      (data) => {
-        if (data.length > 0) {
-          const lat = data[0].lat;
-          const lon = data[0].lon;
+      this.http.get<any[]>(url).subscribe(
+        (data) => {
+          if (data.length > 0) {
+            const lat = data[0].lat;
+            const lon = data[0].lon;
 
-          this.obtenerClimaActual(lat, lon);
-          this.ubicacion = ubicacion;
+            this.obtenerClimaActual(lat, lon);
+            this.ubicacion = ubicacion;
+          } else {
+            console.log('No se encontró la ubicación');
+          }
+        },
+        (error) => {
+          console.error(error);
         }
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+      );
+    }
   }
 
   obtenerClimaActual(lat: number, lon: number) {
     const apiKey = '3ec9901109468390854cde8c05855aa8';
-    const lang = 'es'; // Desired language code (e.g., 'es' for Spanish)
+    const lang = 'es'; // Código de idioma deseado (por ejemplo, 'es' para español)
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&lang=${lang}`;
 
     this.http.get<any>(url).subscribe(
@@ -66,6 +74,12 @@ export class ClimaComponent {
         console.error(error);
       }
     );
+  }
+
+  buscar() {
+    if (this.busqueda.trim() !== '') {
+      this.obtenerCoordenadas(this.busqueda);
+    }
   }
 
   capitalizarDescripcion(descripcion: string): string {
@@ -123,10 +137,12 @@ export class ClimaComponent {
         },
         (error) => {
           console.error(error);
+          this.obtenerClimaActual(-34.61315, -58.37723);
         }
       );
     } else {
-      console.error('Geolocation is not supported by this browser.');
+      console.error('La geolocalización no es compatible con este navegador.');
+      this.obtenerClimaActual(-34.61315, -58.37723);
     }
   }
 
@@ -141,19 +157,23 @@ export class ClimaComponent {
     return fecha.toLocaleDateString('es-ES', options);
   }
 
-  obtenerHoraActual(): string {
-    const fecha = new Date();
+  obtenerHoraLocal(): void {
     const options: Intl.DateTimeFormatOptions = {
       hour: 'numeric',
       minute: 'numeric',
-      hour12: true,
+      hour12: false,
     };
-    return fecha.toLocaleTimeString('es-ES', options);
+
+    interval(1000).subscribe(() => {
+      const fecha = new Date();
+      this.hora = fecha.toLocaleTimeString('es-ES', options);
+    });
   }
+
 
   actualizarDatos() {
     this.obtenerCoordenadasActuales();
     this.dia = this.obtenerFechaActual();
-    this.hora = this.obtenerHoraActual();
+    this.obtenerHoraLocal();
   }
 }

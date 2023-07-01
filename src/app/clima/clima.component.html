@@ -1,9 +1,14 @@
 <body>
   <div class="clima-proyecto">
+
     <h2>Clima Actual</h2>
+    <div class="buscador">
+      <input type="text" class="form-control form-control-sm" [(ngModel)]="busqueda" placeholder="Buscar ciudad">
+    <button class="buscar-btn btn" (click)="buscar()"><img src="../../assets/img/lupa.ico" alt="search"></button>
+    </div>
     <div class="clima-recuadro">
       <div class="wheater-head">
-        <div class="time">{{ "Hora: " + hora }}
+        <div class="time" *ngIf="hora !== null">{{ "Hora: " + hora }}
         <div class="actualizar-wheater">
           <button class="actualizar-button" (click)="actualizarDatos()"></button>
         </div>
