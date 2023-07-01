@@ -7,26 +7,22 @@
         <div class="actualizar-wheater">
           <button class="actualizar-button" (click)="actualizarDatos()"></button>
         </div>
-      </div>
+         </div>
         <div class="location">{{ubicacion}}</div>
       </div>
 
       <div class="clima-logo">
         <img [src]="imagenClima" alt="Imagen Clima">
       </div>
-      
+
       <div class="weather">
         <div class="tiempo">
           <div class="temperatura">{{ "Temperatura: " + temperatura + " " + "°C" }}</div>
-          <div class="descripcion">{{descripcion}}</div>
+          <div class="descripcion">{{"Descripcion: " + descripcion}}</div>
         </div>
         <div class="wind">
-          <div class="velocidad-viento">
-            <p>Velocidad del viento: {{ windSpeedValue }} {{ windSpeedUnit }}</p>
-          </div>
-          <div class="direccion-viento">
-            <p>Dirección del viento: {{ windDirection }}°</p>
-          </div>
+          <div class="velocidad-viento">{{"Viento: " + windSpeedValue}} {{windSpeedUnit}}</div>
+          <div class="direccion-viento">{{"Direccion: " + windDirection}}</div>
         </div>
 
       </div>

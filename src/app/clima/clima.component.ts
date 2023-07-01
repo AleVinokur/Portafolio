@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { IconImages, iconImages } from './icon-images';
 
 @Component({
   selector: 'app-clima',
@@ -16,7 +17,7 @@ export class ClimaComponent {
   windSpeedValue: number = 0;
   windSpeedUnit: string = '';
   windDirection: string = '';
-
+  iconImages: IconImages = iconImages;
 
   constructor(private http: HttpClient) {
     this.obtenerCoordenadasActuales();
@@ -28,17 +29,20 @@ export class ClimaComponent {
     const apiKey = '3ec9901109468390854cde8c05855aa8';
     const url = `https://api.openweathermap.org/geo/1.0/direct?q=${ubicacion}&limit=1&appid=${apiKey}`;
 
-    this.http.get<any[]>(url).subscribe((data) => {
-      if (data.length > 0) {
-        const lat = data[0].lat;
-        const lon = data[0].lon;
+    this.http.get<any[]>(url).subscribe(
+      (data) => {
+        if (data.length > 0) {
+          const lat = data[0].lat;
+          const lon = data[0].lon;
 
-        this.obtenerClimaActual(lat, lon);
-        this.ubicacion = ubicacion;
+          this.obtenerClimaActual(lat, lon);
+          this.ubicacion = ubicacion;
+        }
+      },
+      (error) => {
+        console.error(error);
       }
-    }, (error) => {
-      console.error(error);
-    });
+    );
   }
 
   obtenerClimaActual(lat: number, lon: number) {
@@ -46,29 +50,81 @@ export class ClimaComponent {
     const lang = 'es'; // Desired language code (e.g., 'es' for Spanish)
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&lang=${lang}`;
 
-    this.http.get<any>(url).subscribe((data) => {
-      this.temperatura = +(data.main.temp - 273.15).toFixed(2);
-      this.descripcion = data.weather[0].description;
-      this.ubicacion = data.name + ', ' + data.sys.country;
-      this.imagenClima = this.obtenerRutaImagen(this.descripcion);
-      this.windSpeedValue = data.wind.speed.value;
-      this.windSpeedUnit = data.wind.speed.unit;
-      this.windDirection = data.wind.direction.value;
-    }, (error) => {
-      console.error(error);
+    this.http.get<any>(url).subscribe(
+      (data) => {
+        console.log(data);
+        this.temperatura = +(data.main.temp - 273.15).toFixed(2);
+        this.descripcion = this.capitalizarDescripcion(data.weather[0].description);
+        this.ubicacion = data.name + ', ' + data.sys.country;
+        this.imagenClima = this.obtenerRutaImagen(this.descripcion);
+        this.windSpeedValue = data.wind.speed;
+        this.windSpeedUnit = this.obtenerUnidadVelocidad(data.wind.speed);
+        this.windDirection = this.obtenerDireccionViento(data.wind.deg);
+        this.imagenClima = this.obtenerRutaImagen(data.weather[0].icon);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  capitalizarDescripcion(descripcion: string): string {
+    const palabras = descripcion.split(' ');
+    const palabrasCapitalizadas = palabras.map((palabra) => {
+      return palabra.charAt(0).toUpperCase() + palabra.slice(1);
     });
+
+    return palabrasCapitalizadas.join(' ');
+  }
+
+  obtenerRutaImagen(descripcion: string): string {
+    const clima = descripcion.toLowerCase();
+    let rutaImagen = '';
+
+    for (const iconCode in this.iconImages) {
+      if (clima.includes(iconCode)) {
+        rutaImagen = '../../assets/wheater-img/' + this.iconImages[iconCode];
+        break;
+      }
+    }
+
+    return rutaImagen;
+  }
+
+  obtenerUnidadVelocidad(speed: number): string {
+    if (speed >= 0 && speed < 0.3) {
+      return 'm/s';
+    } else {
+      return 'km/h';
+    }
+  }
+
+  obtenerDireccionViento(deg: number): string {
+    const direccion = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+    const index = Math.round(deg / 45) % 8;
+    const direccionViento = direccion[index];
+
+    return `${direccionViento} ${this.obtenerSimboloBrujula(index)}`;
+  }
+
+  obtenerSimboloBrujula(index: number): string {
+    const simbolos = ['↑', '↗', '→', '↘', '↓', '↙', '←', '↖'];
+    return simbolos[index];
   }
 
   obtenerCoordenadasActuales() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
+      navigator.geolocation.getCurrentPosition(
+        (position: GeolocationPosition) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
 
-        this.obtenerClimaActual(lat, lon);
-      }, (error) => {
-        console.error(error);
-      });
+          this.obtenerClimaActual(lat, lon);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
     } else {
       console.error('Geolocation is not supported by this browser.');
     }
@@ -76,31 +132,23 @@ export class ClimaComponent {
 
   obtenerFechaActual(): string {
     const fecha = new Date();
-    const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
     return fecha.toLocaleDateString('es-ES', options);
   }
 
   obtenerHoraActual(): string {
     const fecha = new Date();
-    const options: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', hour12: true };
+    const options: Intl.DateTimeFormatOptions = {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    };
     return fecha.toLocaleTimeString('es-ES', options);
-  }
-
-  obtenerRutaImagen(descripcion: string): string {
-    const clima = descripcion.toLowerCase();
-    let rutaImagen = '';
-
-    if (clima.includes('soleado')) {
-      rutaImagen = 'assets/wheater-img/sun.ico';
-    } else if (clima.includes('nublado')) {
-      rutaImagen = 'assets/wheater-img/cloudy-_1_.ico';
-    } else if (clima.includes('nevando')) {
-      rutaImagen = 'assets/wheater-img/snow.ico';
-    } else {
-      rutaImagen = 'assets/wheater-img/storm.ico';
-    }
-
-    return rutaImagen;
   }
 
   actualizarDatos() {

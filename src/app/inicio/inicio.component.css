@@ -53,9 +53,9 @@ summary::before {
 summary::after {
     content: " ";
     display: inline-block;
-    width: 3rem; /* Ajusta el ancho de la imagen según tus necesidades */
+    width: 3rem; 
     height: 3rem;
-    background-image: url(../../assets/img/icons8-menú-xbox-64.ico); /* Ruta de la imagen */
+    background-image: url(../../assets/img/icons8-menú-xbox-64.ico);
     background-size: cover;
     margin: 1rem
 }
@@ -74,9 +74,9 @@ details[open] .menu {
 details[open] summary::before {
   content: " ";
   display: inline-block;
-  width: 4rem; /* Ajusta el ancho de la imagen según tus necesidades */
-  height: 4rem; /* Ajusta la altura de la imagen según tus necesidades */
-  background-image: url(../../assets/img/icons8-cerrar-ventana-100.ico); /* Ruta de la imagen */
+  width: 4rem;
+  height: 4rem;
+  background-image: url(../../assets/img/icons8-cerrar-ventana-100.ico);
   background-size: cover;
   margin: .5rem;
   z-index: 1000;

@@ -1,3 +1,18 @@
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(145, 77, 247, 1) 35%, rgba(0, 67, 153, 1) 71%, rgba(0, 0, 94, 1) 100%);
 }
@@ -10,8 +25,15 @@ body {
   backdrop-filter: blur(5px);
   max-width: 30rem;
   width: 90%;
-  margin: 2rem auto;
+  margin-left: 10rem;
   padding: 2rem;
+}
+
+.clima-proyecto h2{
+  position: relative;
+  margin-top: 6rem;
+  margin-left: 10rem;
+  color: azure;
 }
 
 .wheater-head {
@@ -36,11 +58,6 @@ body {
 }
 
 
-.weather {
-  margin-top: 2rem;
-  color: azure;
-  text-align: center;
-}
 
 .actualizar-wheater {
   display: flex;
@@ -49,32 +66,31 @@ body {
 }
 
 .actualizar-button {
-  background-image: url('../../assets/img/actualizado.ico');
+  background-image: url('../../assets/wheater-img/sincronizar.ico');
   background-repeat: no-repeat;
   background-size: contain;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  margin-right: 0.5rem;
-  margin-bottom: 1rem;
+  margin-left: 0.5rem;
 }
 
-.descripcion {
-  margin-top: 1.5rem;
-}
 .clima-logo {
   display: flex;
   justify-content: center;
+}
+.clima-logo img{
+  width: 5rem;
 }
 .weather {
   margin-top: 2rem;
   color: azure;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
 }
 
 .tiempo {
