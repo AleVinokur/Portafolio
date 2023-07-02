@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Roboto';
   src: url('../../assets/fonts/Roboto-Regular.ttf') format('truetype');
@@ -23,11 +22,12 @@ body {
   justify-content: center;
   margin-left: -55rem;
 }
+
 .buscador input {
   max-width: 7%;
 }
 
-.buscador img{
+.buscador img {
   width: 3rem;
 }
 
@@ -45,7 +45,7 @@ body {
   padding: 2rem;
 }
 
-.clima-proyecto h2{
+.clima-proyecto h2 {
   position: relative;
   margin-top: 6rem;
   margin-left: 10rem;
@@ -69,11 +69,10 @@ body {
   color: azure;
   align-items: center;
 }
- .actualizar-button{
+
+.actualizar-button {
   margin-top: 1rem;
 }
-
-
 
 .actualizar-wheater {
   display: flex;
@@ -97,12 +96,14 @@ body {
   display: flex;
   justify-content: center;
 }
-.clima-logo img{
+
+.clima-logo img {
   margin-top: 2rem;
   width: 6rem;
 }
+
 .weather {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   color: azure;
   display: flex;
   flex-direction: row;
@@ -121,7 +122,3 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
-
-
-

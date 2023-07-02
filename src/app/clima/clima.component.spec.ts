@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ClimaComponent } from './clima.component';
 
 describe('ClimaComponent', () => {

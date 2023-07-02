@@ -6,7 +6,7 @@ import { interval } from 'rxjs';
 @Component({
   selector: 'app-clima',
   templateUrl: './clima.component.html',
-  styleUrls: ['./clima.component.css']
+  styleUrls: ['./clima.component.css','./media.clima.css']
 })
 export class ClimaComponent {
   temperatura: number = 0;
