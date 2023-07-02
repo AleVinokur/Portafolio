@@ -97,12 +97,21 @@ export class ClimaComponent {
 
     for (const iconCode in this.iconImages) {
       if (clima.includes(iconCode)) {
-        rutaImagen = '../../assets/wheater-img/' + this.iconImages[iconCode];
+        rutaImagen = this.iconImages[iconCode];
         break;
       }
     }
 
     return rutaImagen;
+  }
+
+
+  private resolveUrl(url: string): string {
+    const base = window.location.href;
+    const a = document.createElement('a');
+    a.href = url;
+    const resolvedPath = new URL(a.href, base).href;
+    return resolvedPath;
   }
 
   obtenerUnidadVelocidad(speed: number): string {
