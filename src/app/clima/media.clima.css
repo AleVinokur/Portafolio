@@ -103,23 +103,24 @@
       width: 22rem;
       height: 20rem;
       margin-left: 0.8rem;
-      gap: 2rem;
     }
     .buscador input {
       max-width: 15rem;
       margin-left: 5rem;
     }
     .weather {
-      margin-top: 4rem;
+      margin-top: 2rem;
       font-size: small;
       display: flex;
       justify-content: flex-start;
     }
     .weather .tiempo {
       margin-left: -1rem;
+      width: 12rem;
     }
     .weather .wind {
-      margin-left: 6rem;
+      margin-left: 4rem;
+      width: 10rem;
     }
   }
 
